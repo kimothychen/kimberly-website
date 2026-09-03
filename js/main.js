@@ -1,16 +1,6 @@
 (function(){
-  var nav = document.getElementById('nav');
   var scrollCue = document.getElementById('scrollCue');
-
-  function onScroll(){
-    if(window.scrollY > 40){
-      nav.classList.add('scrolled');
-    } else {
-      nav.classList.remove('scrolled');
-    }
-  }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  var heroAurora = document.getElementById('heroAurora');
 
   if(scrollCue){
     scrollCue.addEventListener('click', function(){
@@ -19,17 +9,29 @@
     });
   }
 
-  // Reveal window-section color once it's meaningfully in view.
-  var windowSections = document.querySelectorAll('.window-section');
-  var sectionObserver = new IntersectionObserver(function(entries){
+  // Bloom the hero aurora shortly after load.
+  if(heroAurora){
+    window.setTimeout(function(){
+      heroAurora.classList.remove('dormant');
+      heroAurora.classList.add('bloom');
+    }, 500);
+  }
+
+  // Bloom each section's aurora once it scrolls into view.
+  var revealSections = document.querySelectorAll('.reveal-section');
+  var auroraObserver = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
-        entry.target.classList.add('in-view');
-        sectionObserver.unobserve(entry.target);
+        var auroras = entry.target.querySelectorAll('.aurora');
+        auroras.forEach(function(el){
+          el.classList.remove('dormant');
+          el.classList.add('bloom');
+        });
+        auroraObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.3 });
-  windowSections.forEach(function(section){ sectionObserver.observe(section); });
+  }, { threshold: 0.25 });
+  revealSections.forEach(function(section){ auroraObserver.observe(section); });
 
   // Reveal each job entry with a small stagger as it scrolls in.
   var jobs = document.querySelectorAll('.job');
@@ -45,6 +47,21 @@
     job.style.transitionDelay = Math.min(i * 60, 240) + 'ms';
     jobObserver.observe(job);
   });
+
+  // Cycle the word inside the contact circle.
+  var cycleWord = document.getElementById('cycleWord');
+  if(cycleWord){
+    var words = ['Connect', 'Talk', 'Build', 'Collaborate'];
+    var idx = 0;
+    setInterval(function(){
+      cycleWord.classList.add('fade');
+      window.setTimeout(function(){
+        idx = (idx + 1) % words.length;
+        cycleWord.textContent = words[idx];
+        cycleWord.classList.remove('fade');
+      }, 400);
+    }, 2600);
+  }
 
   // Smooth-scroll for in-page nav links.
   document.querySelectorAll('a[href^="#"]').forEach(function(link){
