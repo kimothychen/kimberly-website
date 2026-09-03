@@ -1,6 +1,5 @@
 (function(){
   var scrollCue = document.getElementById('scrollCue');
-  var heroAurora = document.getElementById('heroAurora');
 
   if(scrollCue){
     scrollCue.addEventListener('click', function(){
@@ -9,12 +8,18 @@
     });
   }
 
-  // Bloom the hero aurora shortly after load.
-  if(heroAurora){
-    window.setTimeout(function(){
-      heroAurora.classList.remove('dormant');
-      heroAurora.classList.add('bloom');
-    }, 500);
+  // Live New York clock in the hero.
+  var clock = document.getElementById('clock');
+  if(clock){
+    var fmt = new Intl.DateTimeFormat('en-US', {
+      hour: 'numeric', minute: '2-digit', second: '2-digit',
+      timeZone: 'America/New_York', timeZoneName: 'short'
+    });
+    var tick = function(){
+      clock.textContent = fmt.format(new Date()) + ' · New York, NY';
+    };
+    tick();
+    setInterval(tick, 1000);
   }
 
   // Bloom each section's aurora once it scrolls into view.
