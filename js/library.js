@@ -6,9 +6,9 @@
 
   var pad = function(n){ return (n < 10 ? '0' : '') + n + '.'; };
 
-  // Sort "Recent" by date finished, falling back to when the book was shelved.
+  // Goodreads hands the shelf over newest-read first, so "Recent" keeps its order.
   var sorters = {
-    recent: function(a, b){ return (b.readAt || b.addedAt).localeCompare(a.readAt || a.addedAt); },
+    recent: function(a, b){ return a.order - b.order; },
     title: function(a, b){ return a.title.replace(/^(the|a|an) /i, '').localeCompare(b.title.replace(/^(the|a|an) /i, '')); },
     author: function(a, b){
       var last = function(name){ return name.split(' ').slice(-1)[0]; };
