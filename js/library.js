@@ -97,8 +97,54 @@
     });
   });
 
-  fetch('/api/goodreads')
-    .then(function(res){ if(!res.ok) throw new Error(res.status); return res.json(); })
+  // Goodreads retired its API and RSS feeds, and shelf pages need a login, but its
+  // "add your shelf to your blog" widget is public. Each widget is a script that
+  // writes its markup into #gr_custom_widget_<id>, so load both into hidden boxes
+  // and read the books back out.
+  var USER = '144512490';
+  var WIDGETS = { now: ['currently-reading', 'date_added'], read: ['read', 'date_read'] };
+
+  var coverSize = function(url){
+    // thumbnails end ..._SY75_.jpg or ..._SX50_SY75_.jpg; ask for 475px tall instead
+    return /nophoto/.test(url) ? '' : url.replace(/\._(?:S[XY]\d+_)+(?=\.\w+$)/, '._SY475_');
+  };
+
+  var loadShelf = function(id){
+    return new Promise(function(resolve, reject){
+      var box = document.createElement('div');
+      box.id = 'gr_custom_widget_' + id;
+      box.hidden = true;
+      document.body.appendChild(box);
+      var script = document.createElement('script');
+      script.src = 'https://www.goodreads.com/review/custom_widget/' + USER +
+        '?shelf=' + WIDGETS[id][0] + '&num_books=1000&sort=' + WIDGETS[id][1] +
+        '&order=d&widget_id=' + id;
+      script.onerror = reject;
+      script.onload = function(){
+        var list = [];
+        box.querySelectorAll('[class^="gr_custom_each_container"]').forEach(function(el, i){
+          var title = el.querySelector('[class^="gr_custom_title"] a');
+          if(!title) return;
+          var author = el.querySelector('[class^="gr_custom_author"] a');
+          var img = el.querySelector('[class^="gr_custom_book_container"] img');
+          list.push({
+            title: title.textContent.trim().replace(/\s+/g, ' '),
+            author: author ? author.textContent.trim().replace(/\s+/g, ' ') : '',
+            cover: img ? coverSize(img.getAttribute('src')) : '',
+            rating: el.querySelectorAll('[class^="gr_custom_rating"] img[src*="star_active"]').length,
+            url: title.href.split('?')[0],
+            order: i
+          });
+        });
+        box.remove();
+        list.length ? resolve(list) : reject(new Error('empty shelf'));
+      };
+      document.body.appendChild(script);
+    });
+  };
+
+  Promise.all([loadShelf('now').catch(function(){ return []; }), loadShelf('read')])
+    .then(function(shelves){ return { currentlyReading: shelves[0], books: shelves[1] }; })
     .then(function(data){
       books = data.books || [];
       document.getElementById('countBooks').textContent = books.length;
