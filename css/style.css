@@ -249,7 +249,12 @@ a.role-co:hover{text-decoration-color:var(--ink);}
 .sort button:hover,.sort button.is-active{background-size:100% 1.5px;}
 
 .shelf-wrap,.now-reading{margin-top:clamp(2rem,5cqi,3.5rem);}
-.shelf-wrap .section-head,.now-reading .section-head{padding-bottom:0;}
+.shelf-wrap .section-head,.now-reading .section-head{
+  padding-bottom:0;
+  font-size:clamp(1.1rem,2.4cqi,2rem);
+  line-height:1;
+  letter-spacing:-.03em;
+}
 .now-list{
   list-style:none;
   margin:0;
@@ -276,6 +281,11 @@ a.role-co:hover{text-decoration-color:var(--ink);}
   font-size:clamp(.62rem,1cqi,.8rem);
   line-height:1.15;
   text-transform:uppercase;
+}
+.now-title{
+  font-size:clamp(.9rem,1.6cqi,1.3rem);
+  line-height:1.05;
+  letter-spacing:-.02em;
 }
 .now-author{color:var(--ink-soft);}
 .shelf-status{padding-top:1rem;}
