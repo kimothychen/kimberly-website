@@ -1,18 +1,22 @@
-"""Serve Kimberly's Goodreads "read" shelf as JSON for the library page.
+"""Serve Kimberly's Goodreads shelves as JSON for the library page.
 
-Goodreads retired its API, but every public profile still publishes an RSS
-feed per shelf. Vercel runs this as a serverless function at /api/goodreads
-and caches the response at the edge for an hour.
+Goodreads retired its API, but every shelf still publishes an RSS feed. The
+profile is private, so the feed needs the account's RSS key, which lives in
+the GOODREADS_KEY environment variable on Vercel (never in the repo). Vercel
+runs this as a serverless function at /api/goodreads and caches the response
+at the edge for an hour.
 """
 from email.utils import parsedate_to_datetime
 from http.server import BaseHTTPRequestHandler
 import json
+import os
 import re
+import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
 
 USER_ID = '144512490'
-FEED = 'https://www.goodreads.com/review/list_rss/{user}?shelf=read&page={page}'
+FEED = 'https://www.goodreads.com/review/list_rss/{user}?key={key}&shelf={shelf}&page={page}'
 MAX_PAGES = 20
 
 
@@ -47,11 +51,11 @@ def parse(xml_bytes):
     return books
 
 
-def fetch_shelf():
+def fetch_shelf(shelf, key):
     books, seen = [], set()
     for page in range(1, MAX_PAGES + 1):
         req = urllib.request.Request(
-            FEED.format(user=USER_ID, page=page),
+            FEED.format(user=USER_ID, key=urllib.parse.quote(key), shelf=shelf, page=page),
             headers={'User-Agent': 'kimberlyhchen.com library'},
         )
         with urllib.request.urlopen(req, timeout=8) as resp:
@@ -66,7 +70,12 @@ def fetch_shelf():
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            payload, status = {'books': fetch_shelf()}, 200
+            key = os.environ.get('GOODREADS_KEY', '')
+            payload = {
+                'currentlyReading': fetch_shelf('currently-reading', key),
+                'books': fetch_shelf('read', key),
+            }
+            status = 200
             cache = 'public, s-maxage=3600, stale-while-revalidate=86400'
         except Exception:
             payload, status = {'error': 'Goodreads shelf unavailable'}, 502

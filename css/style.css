@@ -232,10 +232,36 @@ a.role-co:hover{text-decoration-color:var(--ink);}
 }
 .sort button:hover,.sort button.is-active{background-size:100% 1.5px;}
 
-.shelf-wrap{
-  margin-top:clamp(2rem,5cqi,3.5rem);
-  border-top:1.5px solid var(--ink);
+.shelf-wrap,.now-reading{margin-top:clamp(2rem,5cqi,3.5rem);}
+.shelf-wrap .section-head,.now-reading .section-head{padding-bottom:0;}
+.now-list{
+  list-style:none;
+  margin:0;
+  padding:clamp(1.2rem,3cqi,2rem) 0 0;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--gap);
 }
+.now-book{display:flex;align-items:flex-end;gap:1rem;}
+.now-cover{flex:0 0 clamp(70px,9cqi,120px);}
+.now-cover img,.now-cover .book-blank{
+  display:block;
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  filter:saturate(.55) sepia(.14) contrast(.97);
+  box-shadow:0 1px 2px rgba(0,0,0,.12);
+  transition:filter .3s ease;
+}
+.now-book:hover img{filter:none;}
+.now-text{display:flex;flex-direction:column;gap:.25rem;}
+.now-title,.now-author{
+  font-weight:700;
+  font-size:clamp(.62rem,1cqi,.8rem);
+  line-height:1.15;
+  text-transform:uppercase;
+}
+.now-author{color:var(--ink-soft);}
 .shelf-status{padding-top:1rem;}
 .shelf-status a{text-decoration:underline;text-underline-offset:.2em;}
 .shelf{
@@ -328,6 +354,7 @@ a.role-co:hover{text-decoration-color:var(--ink);}
   .split,.section-head{grid-template-columns:1fr;}
   .library-meta{grid-template-columns:1fr;gap:1.2rem;}
   .shelf{grid-template-columns:repeat(3,1fr);}
+  .now-list{grid-template-columns:1fr;gap:1.2rem;}
   .book-link{width:52%;}
   .book-cap{display:none;}
   .split .label{margin-bottom:.3rem;}

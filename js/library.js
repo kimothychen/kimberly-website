@@ -16,6 +16,50 @@
     }
   };
 
+  var cover = function(book){
+    if(book.cover){
+      var img = document.createElement('img');
+      img.src = book.cover;
+      img.alt = book.title + ' by ' + book.author;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      return img;
+    }
+    // No cover on Goodreads: set the title on a plain block instead
+    var blank = document.createElement('span');
+    blank.className = 'book-blank';
+    blank.textContent = book.title;
+    return blank;
+  };
+
+  var shortTitle = function(title){ return title.replace(/\s*\(.*?#\d+\)$/, ''); };
+
+  var renderNow = function(list){
+    if(!list.length) return;
+    var ul = document.getElementById('nowList');
+    list.forEach(function(book){
+      var li = document.createElement('li');
+      var link = document.createElement('a');
+      link.className = 'now-book';
+      link.href = book.url;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      var art = document.createElement('span');
+      art.className = 'now-cover';
+      art.appendChild(cover(book));
+      var text = document.createElement('span');
+      text.className = 'now-text';
+      text.innerHTML = '<span class="now-title"></span><span class="now-author"></span>';
+      text.firstChild.textContent = shortTitle(book.title);
+      text.lastChild.textContent = book.author;
+      link.appendChild(art);
+      link.appendChild(text);
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+    document.getElementById('nowReading').hidden = false;
+  };
+
   var render = function(order){
     var sorted = books.slice().sort(sorters[order]);
     shelf.innerHTML = '';
@@ -33,24 +77,11 @@
       link.target = '_blank';
       link.rel = 'noopener';
 
-      if(book.cover){
-        var img = document.createElement('img');
-        img.src = book.cover;
-        img.alt = book.title + ' by ' + book.author;
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        link.appendChild(img);
-      } else {
-        // No cover on Goodreads: set the title on a plain block instead
-        var blank = document.createElement('span');
-        blank.className = 'book-blank';
-        blank.textContent = book.title;
-        link.appendChild(blank);
-      }
+      link.appendChild(cover(book));
 
       var cap = document.createElement('span');
       cap.className = 'book-cap';
-      cap.textContent = book.title.replace(/\s*\(.*?#\d+\)$/, '') + ' — ' + book.author;
+      cap.textContent = shortTitle(book.title) + ' — ' + book.author;
       link.appendChild(cap);
 
       li.appendChild(num);
@@ -75,6 +106,7 @@
       books.forEach(function(b){ authors[b.author] = true; });
       document.getElementById('countAuthors').textContent = Object.keys(authors).length;
       status.hidden = true;
+      renderNow(data.currentlyReading || []);
       render('recent');
     })
     .catch(function(){
