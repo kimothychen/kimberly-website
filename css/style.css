@@ -170,6 +170,14 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   gap:var(--gap);
   margin-bottom:clamp(1.5rem,3.5cqi,2.5rem);
 }
+.body-caps a{
+  text-decoration:underline;
+  text-decoration-thickness:1.5px;
+  text-underline-offset:.15em;
+  text-decoration-color:rgba(26,26,26,.3);
+  transition:text-decoration-color .2s ease;
+}
+.body-caps a:hover{text-decoration-color:var(--ink);}
 .body-caps{
   font-weight:700;
   text-transform:uppercase;
@@ -207,7 +215,7 @@ a.role-co:hover{text-decoration-color:var(--ink);}
 .contact .display{margin-top:clamp(2.5rem,8cqi,6rem);}
 
 /* ---------- LIBRARY ---------- */
-.display-library{margin-top:clamp(1.5rem,5cqi,4rem);font-size:15cqi;}
+.display-library{margin-top:clamp(1.5rem,5cqi,4rem);font-size:12.9cqi;}
 .library-meta{
   display:grid;
   grid-template-columns:1fr 2fr;
