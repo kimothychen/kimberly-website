@@ -208,6 +208,14 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   letter-spacing:-.04em;
 }
 .role-title,.role-date{padding-bottom:.25em;}
+.roles .group{
+  font-size:clamp(.85rem,1.5cqi,1.3rem);
+  letter-spacing:-.02em;
+}
+.role .role-title,.role .role-date{
+  font-size:clamp(.72rem,1.2cqi,1.05rem);
+  letter-spacing:-.01em;
+}
 .role-date{text-align:right;color:var(--ink-soft);}
 a.role-co{
   justify-self:start;
