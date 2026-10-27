@@ -50,8 +50,10 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
 .topbar-nav a{
   padding:.55rem .85rem;
   background:var(--chrome);
-  font-size:.82rem;
-  font-weight:500;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:-.005em;
+  text-transform:uppercase;
   transition:background .2s ease;
 }
 .topbar-nav a:hover{background:#cfccc6;}
@@ -219,7 +221,9 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
 @media (max-width:640px){
   .page{padding-right:var(--gutter);}
   .spine,.corner{display:none;}
-  .topbar-nav a{padding:.5rem .65rem;font-size:.78rem;}
+  .topbar-name{font-size:1.15rem;}
+  .topbar-nav{gap:.3rem;}
+  .topbar-nav a{padding:.5rem .55rem;font-size:.66rem;}
   .label,.info dt,.info dd,.row-foot,.section-head,
   .role-co,.role-title,.role-date,.role-note{font-size:.62rem;}
   .photos{grid-template-columns:1fr 1fr;}
