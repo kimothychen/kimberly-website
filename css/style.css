@@ -191,8 +191,7 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   display:grid;
   grid-template-columns:subgrid;
   row-gap:.3rem;
-  padding:.7rem 0;
-  border-bottom:1px solid var(--rule);
+  padding:.7rem 0 0;
 }
 .role-date{text-align:right;color:var(--ink-soft);}
 a.role-co{
