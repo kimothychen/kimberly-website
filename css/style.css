@@ -190,7 +190,7 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
 .roles{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 var(--gap);}
 .group{
   grid-column:1 / -1;
-  padding:1.6rem 0 .6rem;
+  padding:2.2rem 0 .6rem;
   border-bottom:1.5px solid var(--ink);
 }
 .group:first-child{padding-top:0;}
@@ -199,17 +199,25 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   display:grid;
   grid-template-columns:subgrid;
   row-gap:.3rem;
-  padding:.7rem 0 0;
+  align-items:end;
+  padding:.5rem 0 .3rem;
 }
+.role .role-co{
+  font-size:clamp(1.15rem,2.7cqi,2.4rem);
+  line-height:.92;
+  letter-spacing:-.04em;
+}
+.role-title,.role-date{padding-bottom:.25em;}
 .role-date{text-align:right;color:var(--ink-soft);}
 a.role-co{
   justify-self:start;
   text-decoration:underline;
-  text-decoration-thickness:1px;
-  text-underline-offset:.2em;
+  text-decoration-thickness:2px;
+  text-underline-offset:.1em;
   text-decoration-color:var(--rule);
   transition:text-decoration-color .2s ease;
 }
+a.role-co span{font-size:.45em;vertical-align:.9em;}
 a.role-co:hover{text-decoration-color:var(--ink);}
 
 .contact .display{margin-top:clamp(2.5rem,8cqi,6rem);}
