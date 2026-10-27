@@ -40,8 +40,11 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
 }
 .topbar-name{
   font-weight:700;
-  font-size:clamp(1.1rem,2vw,1.4rem);
-  letter-spacing:-.03em;
+  font-size:clamp(1.3rem,2.4vw,1.9rem);
+  line-height:.8;
+  letter-spacing:-.045em;
+  text-transform:uppercase;
+  white-space:nowrap;
 }
 .topbar-nav{display:flex;gap:.4rem;}
 .topbar-nav a{
