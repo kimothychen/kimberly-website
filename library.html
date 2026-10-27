@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Library · Kimberly Chen</title>
+<meta name="description" content="Books Kimberly Chen has read, pulled live from Goodreads.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar-name">Kimberly Chen.</a>
+  <nav class="topbar-nav" aria-label="Primary">
+    <a href="index.html#about">About</a>
+    <a href="index.html#work">Work</a>
+    <a href="library.html" class="is-active" aria-current="page">Library</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<span class="spine" aria-hidden="true">Kimberly Chen · Library</span>
+
+<main class="page">
+
+  <section class="hero library-hero">
+    <h1 class="display display-library">Library</h1>
+
+    <div class="library-meta">
+      <dl class="info">
+        <dt>Shelf:</dt><dd>Read</dd>
+        <dt>Volumes:</dt><dd id="countBooks">—</dd>
+        <dt>Authors:</dt><dd id="countAuthors">—</dd>
+        <dt class="gap">Via:</dt><dd class="gap"><a href="https://www.goodreads.com/user/show/144512490-kimberly" target="_blank" rel="noopener">Goodreads</a></dd>
+      </dl>
+
+      <div class="sort" role="group" aria-label="Sort books">
+        <span class="label">Sort:</span>
+        <button type="button" data-sort="recent" class="is-active">Recent</button>
+        <button type="button" data-sort="title">Title</button>
+        <button type="button" data-sort="author">Author</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="shelf-wrap">
+    <p class="shelf-status label" id="shelfStatus">Loading the shelf…</p>
+    <ol class="shelf" id="shelf"></ol>
+  </section>
+
+  <div class="row-foot library-foot">
+    <span>© 2026 Kimberly Chen</span>
+    <span>New York, NY</span>
+  </div>
+
+</main>
+
+<span class="corner" aria-hidden="true"></span>
+
+<script src="js/library.js"></script>
+</body>
+</html>

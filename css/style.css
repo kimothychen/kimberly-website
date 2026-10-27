@@ -46,10 +46,10 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   text-transform:uppercase;
   white-space:nowrap;
 }
-.topbar-nav{display:flex;gap:clamp(1.2rem,2.4vw,2rem);}
+.topbar-nav{display:flex;gap:clamp(.9rem,1.8vw,1.5rem);}
 .topbar-nav a{
   padding-bottom:.18em;
-  font-size:clamp(.95rem,1.4vw,1.15rem);
+  font-size:clamp(.72rem,.95vw,.85rem);
   font-weight:400;
   letter-spacing:0;
   text-transform:uppercase;
@@ -206,13 +206,117 @@ a.role-co:hover{text-decoration-color:var(--ink);}
 
 .contact .display{margin-top:clamp(2.5rem,8cqi,6rem);}
 
+/* ---------- LIBRARY ---------- */
+.display-library{margin-top:clamp(1.5rem,5cqi,4rem);font-size:15cqi;}
+.library-meta{
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:var(--gap);
+  align-items:end;
+  margin-top:clamp(.6rem,1.4cqi,1rem);
+}
+.library-meta .info{margin-top:0;}
+.info dd a{text-decoration:underline;text-underline-offset:.2em;text-decoration-color:var(--rule);}
+.sort{display:flex;align-items:baseline;gap:1.2em;}
+.sort button{
+  padding:0 0 .15em;
+  border:0;
+  background:linear-gradient(var(--ink),var(--ink)) left bottom / 0 1.5px no-repeat;
+  color:var(--ink);
+  font:inherit;
+  font-size:clamp(.62rem,1cqi,.8rem);
+  font-weight:700;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:background-size .25s ease;
+}
+.sort button:hover,.sort button.is-active{background-size:100% 1.5px;}
+
+.shelf-wrap{
+  margin-top:clamp(2rem,5cqi,3.5rem);
+  border-top:1.5px solid var(--ink);
+}
+.shelf-status{padding-top:1rem;}
+.shelf-status a{text-decoration:underline;text-underline-offset:.2em;}
+.shelf{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:0 var(--gap);
+}
+.book{
+  position:relative;
+  aspect-ratio:4/5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.book-num{
+  position:absolute;
+  left:0;top:.5rem;
+  font-weight:700;
+  font-size:clamp(.55rem,.8cqi,.68rem);
+}
+.book-link{
+  position:relative;
+  width:42%;
+  display:block;
+}
+.book-link img,
+.book-blank{
+  display:block;
+  width:100%;
+  aspect-ratio:2/3;
+  object-fit:cover;
+  /* mute publisher covers so the grid reads like the site photos */
+  filter:saturate(.55) sepia(.14) contrast(.97);
+  box-shadow:0 1px 2px rgba(0,0,0,.12);
+  transition:filter .3s ease, transform .3s ease;
+}
+.book-blank{
+  padding:.4rem;
+  background:#d6d3cd;
+  font-weight:700;
+  font-size:.5rem;
+  line-height:1.1;
+  text-transform:uppercase;
+  overflow:hidden;
+  overflow-wrap:anywhere;
+}
+.book-link:hover img{filter:none;transform:translateY(-2px);}
+.book-cap{
+  position:absolute;
+  left:50%;top:calc(100% + .5rem);
+  width:max-content;
+  max-width:160%;
+  transform:translateX(-50%);
+  font-weight:700;
+  font-size:.6rem;
+  line-height:1.15;
+  text-transform:uppercase;
+  text-align:center;
+  color:var(--ink-soft);
+  opacity:0;
+  transition:opacity .2s ease;
+  pointer-events:none;
+}
+.book-link:hover .book-cap,
+.book-link:focus-visible .book-cap{opacity:1;}
+.library-foot{margin-top:clamp(3rem,8cqi,6rem);}
+
+@media (max-width:1000px){
+  .shelf{grid-template-columns:repeat(4,1fr);}
+}
+
 /* ---------- MOBILE ---------- */
 @media (max-width:640px){
   .page{padding-right:var(--gutter);}
   .spine,.corner{display:none;}
-  .topbar-name{font-size:1.15rem;}
-  .topbar-nav{gap:.9rem;}
-  .topbar-nav a{font-size:.8rem;}
+  .topbar-name{font-size:1rem;}
+  .topbar-nav{gap:.7rem;}
+  .topbar-nav a{font-size:.64rem;}
   .label,.info dt,.info dd,.row-foot,.section-head,
   .role-co,.role-title,.role-date{font-size:.62rem;}
   .photos{grid-template-columns:1fr 1fr;}
@@ -221,6 +325,10 @@ a.role-co:hover{text-decoration-color:var(--ink);}
   .band img{object-position:38% 50%;}
   .row-foot{grid-template-columns:1fr 1fr;}
   .split,.section-head{grid-template-columns:1fr;}
+  .library-meta{grid-template-columns:1fr;gap:1.2rem;}
+  .shelf{grid-template-columns:repeat(3,1fr);}
+  .book-link{width:52%;}
+  .book-cap{display:none;}
   .split .label{margin-bottom:.3rem;}
   .body-caps{font-size:.9rem;}
   .roles{grid-template-columns:1fr auto;}
