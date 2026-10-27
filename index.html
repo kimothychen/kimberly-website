@@ -4,227 +4,201 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kimberly Chen</title>
-<meta name="description" content="Kimberly Chen — personal site.">
+<meta name="description" content="Kimberly Chen, a builder based in New York City. Business Operations at Allium.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header class="topbar" id="nav">
-  <a href="#top" class="cell brand"><span class="mono-box">KC</span></a>
-  <nav class="cell nav-links" aria-label="Primary">
+<header class="topbar">
+  <a href="#top" class="topbar-name">Kimberly Chen</a>
+  <nav class="topbar-nav" aria-label="Primary">
     <a href="#about">About</a>
     <a href="#work">Work</a>
     <a href="#contact">Contact</a>
   </nav>
-  <div class="cell nav-meta">
-    <span>Based in New York.</span>
-    <a href="#contact">Say hello <span aria-hidden="true">→</span></a>
-  </div>
 </header>
 
 <main>
 
-  <section class="hero" id="top">
-    <div class="hero-inner">
-      <div class="hero-meta" id="clock" aria-hidden="true">— New York, NY</div>
-      <h1 class="stamped">Kimberly Chen</h1>
-      <div class="hero-summary">
-        <p>I'm in Business Operations at <span class="chip">Allium</span>, based in New York by way of the Bay Area. Before this, I helped scale Investor Relations at <span class="chip">Pantera Capital</span> and worked across Legal &amp; Compliance at <span class="chip">Blackstone</span>. I spent my first few years in finance and now build in tech :)</p>
-        <div class="contact-links hero-links">
-          <a href="mailto:kimberly0703@gmail.com">Email <span>↗</span></a>
-          <a href="https://www.linkedin.com/in/kimberlyhchen/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
-          <a href="https://x.com/kmbrlychn" target="_blank" rel="noopener">X <span>↗</span></a>
+  <!-- 01: cover -->
+  <section class="sheet-wrap" id="top">
+    <article class="sheet cover">
+      <div class="photos">
+        <!-- Swap each placeholder for <img src="images/01.jpg" alt="..."> once photos are in -->
+        <figure class="photo"><span class="photo-tag">Photo 01</span></figure>
+        <figure class="photo"><span class="photo-tag">Photo 02</span></figure>
+        <figure class="photo"><span class="photo-tag">Photo 03</span></figure>
+      </div>
+
+      <div class="info">
+        <dl class="info-col">
+          <dt>Email:</dt>
+          <dt>LinkedIn:</dt>
+          <dt>X:</dt>
+          <dt>Based in:</dt>
+        </dl>
+        <dl class="info-col">
+          <dd><a href="mailto:kimberly0703@gmail.com">kimberly0703@gmail.com</a></dd>
+          <dd><a href="https://www.linkedin.com/in/kimberlyhchen/" target="_blank" rel="noopener">/in/kimberlyhchen</a></dd>
+          <dd><a href="https://x.com/kmbrlychn" target="_blank" rel="noopener">@kmbrlychn</a></dd>
+          <dd>New York, NY <span id="clock"></span></dd>
+        </dl>
+      </div>
+
+      <h1 class="display display-name">Kimberly Chen</h1>
+
+      <div class="sheet-foot">
+        <span>New York City</span>
+        <span>Business Operations, Allium</span>
+      </div>
+
+      <span class="spine" aria-hidden="true">Kimberly Chen · Business Operations · New York</span>
+      <span class="corner" aria-hidden="true"></span>
+    </article>
+    <span class="counter">1 / 4</span>
+  </section>
+
+  <!-- 02: about -->
+  <section class="sheet-wrap" id="about">
+    <article class="sheet">
+      <div class="sheet-head">
+        <span>02</span>
+        <span>About</span>
+      </div>
+
+      <div class="split">
+        <h2 class="label">Summary:</h2>
+        <p class="body-caps">I’m a builder based in New York City by day and a multi-interest enthusiast by night (more on that later). I lead Business Operations at Allium across Product Marketing, Product Ops, Growth, Internal Ops, Finance, Legal, and more. Before that, I spent a few years in Finance at Blackstone on the LP Communications team and then at Pantera Capital, where I was the right hand to the Head of Investor Relations, helped build out the post-sales function, and raised a bunch of money along the way. Pantera is where I got interested in operating and building!</p>
+      </div>
+
+      <div class="split">
+        <h2 class="label">Outside of work:</h2>
+        <p class="body-caps">I like reading historical fiction, avidly cooking (and occasionally baking, but I largely leave my mom to dominate the oven), going to workout classes (even spin, though I don't know how to ride a bike), bumping 2000s hip hop, and watching crime shows with my partner.</p>
+      </div>
+
+      <div class="photo photo-wide"><span class="photo-tag">Photo 04</span></div>
+
+      <span class="spine" aria-hidden="true">About · Kimberly Chen</span>
+      <span class="corner" aria-hidden="true"></span>
+    </article>
+    <span class="counter">2 / 4</span>
+  </section>
+
+  <!-- 03: work -->
+  <section class="sheet-wrap" id="work">
+    <article class="sheet">
+      <div class="sheet-head">
+        <span>03</span>
+        <span>Work</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span class="stat-num">$400M+</span><span class="label">Raised in Investor Relations at Pantera</span></div>
+        <div class="stat"><span class="stat-num">2×</span><span class="label">IR team scaled at Pantera</span></div>
+        <div class="stat"><span class="stat-num">7</span><span class="label">Functions streamlined at Allium</span></div>
+      </div>
+
+      <div class="roles">
+        <h3 class="label group">Currently</h3>
+        <div class="role">
+          <span class="role-co">Allium</span>
+          <span class="role-title">Business Operations</span>
+          <span class="role-date">2026 — Present</span>
+          <p class="role-note">Streamlining and building processes across Growth, Product Marketing, Product, Internal Ops, Talent, Finance, and Legal simultaneously</p>
+        </div>
+
+        <h3 class="label group">Previously</h3>
+        <div class="role">
+          <span class="role-co">Pantera Capital</span>
+          <span class="role-title">Senior Investor Relations Associate</span>
+          <span class="role-date">2024 — 2026</span>
+          <p class="role-note">Right hand to the Head of Investor Relations, scaled the team 2x and helped raise $400M+ along the way. Learned a lot about VC, fundraising, and operating</p>
+        </div>
+        <div class="role">
+          <span class="role-co">Blackstone</span>
+          <span class="role-title">LP Communications Analyst</span>
+          <span class="role-date">2023 — 2024</span>
+          <p class="role-note">Worked across Legal &amp; Compliance, Institutional Client Solutions, and Private Equity deal teams covering Real Estate and Asset-Based Finance. Also learned big finance was not for me</p>
+        </div>
+
+        <h3 class="label group">Internships</h3>
+        <div class="role">
+          <span class="role-co">Kobre &amp; Kim LLP</span>
+          <span class="role-title">Legal</span>
+          <span class="role-date"></span>
+          <p class="role-note">Learned that corporate law wasn't for me but finance might be (spoiler, it wasn't)</p>
+        </div>
+        <div class="role">
+          <span class="role-co">Dentons</span>
+          <span class="role-title">Global Strategic Research</span>
+          <span class="role-date"></span>
+          <p class="role-note">Delivered research reports to Partner+ level stakeholders, including the Chairman &amp; CEO, for a $3B law firm</p>
+        </div>
+        <div class="role">
+          <span class="role-co">Hunniwell Lake Ventures</span>
+          <span class="role-title">Legal &amp; Communications</span>
+          <span class="role-date"></span>
+          <p class="role-note">Wore a bunch of hats at a medtech VC firm with &lt;10 people</p>
+        </div>
+
+        <h3 class="label group">Volunteering</h3>
+        <div class="role">
+          <span class="role-co">Out4Undergrad</span>
+          <span class="role-title">Sponsorship Director</span>
+          <span class="role-date">2025 — 2026</span>
+          <p class="role-note">Previously: Mentor (Fall 2025), Conference Volunteer (2025), Conference Sponsor (2024), Campus Ambassador (2022–2023), Conference Student (O4U Business 2022)</p>
+        </div>
+        <div class="role">
+          <span class="role-co">Sage Mentorship Project</span>
+          <span class="role-title">Mentor</span>
+          <span class="role-date">2019 — 2021</span>
         </div>
       </div>
-    </div>
 
-    <button class="scroll-cue" id="scrollCue" aria-label="Scroll to About">
-      <span>Scroll</span>
-      <svg width="14" height="20" viewBox="0 0 14 20" fill="none"><path d="M7 1V19M7 19L1 13M7 19L13 13" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
+      <span class="spine" aria-hidden="true">Work · Kimberly Chen</span>
+      <span class="corner" aria-hidden="true"></span>
+    </article>
+    <span class="counter">3 / 4</span>
   </section>
 
-  <section class="about reveal-section" id="about">
-    <div class="panel-label"><span>01 — About</span></div>
-    <div class="about-grid">
-      <div class="about-visual">
-        <div class="aurora dormant" aria-hidden="true">
-          <span class="aurora-blob b1"></span>
-          <span class="aurora-blob b2"></span>
-          <span class="aurora-blob b3"></span>
-        </div>
-      </div>
-      <div class="about-content">
-        <p>Outside of work, I like reading historical fiction, avidly cooking (and occasionally baking, but I largely leave my mom to dominate the oven), going to workout classes (even spin, though I don't know how to ride a bike), bumping 2000s hip hop, and watching crime shows with my partner.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="highlights reveal-section" id="highlights">
-    <div class="panel-label"><span>02 — Highlights</span></div>
-    <div class="bento">
-      <div class="bento-cell wide">
-        <span class="stat">2026 —</span>
-        <span class="cap">Building Business Operations across Growth, Product, Talent, Finance &amp; Legal at Allium</span>
-      </div>
-      <div class="bento-cell">
-        <span class="stat">7</span>
-        <span class="cap">Functions streamlined at once</span>
-      </div>
-      <div class="bento-cell hatch" aria-hidden="true"></div>
-      <div class="bento-cell">
-        <span class="stat">$400M+</span>
-        <span class="cap">Raised leading Investor Relations at Pantera Capital</span>
-      </div>
-      <div class="bento-cell">
-        <span class="stat">2×</span>
-        <span class="cap">IR team scaled at Pantera</span>
-      </div>
-      <div class="bento-cell wide">
-        <span class="stat">2025 —</span>
-        <span class="cap">Sponsorship Director, Out4Undergrad</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-divider" aria-hidden="true">
-    <div class="pill">
-      <span>W</span><span>O</span><span>R</span><span>K</span>
-    </div>
-  </section>
-
-  <section class="work" id="work">
-    <div class="panel-label"><span>03 — Work</span></div>
-
-    <div class="timeline">
-
-      <div class="timeline-group">
-        <h3>Currently</h3>
-        <article class="job">
-          <div class="job-head">
-            <h4>Business Operations</h4>
-            <span class="job-co">Allium</span>
-            <time>2026 — Present</time>
-          </div>
-          <ul>
-            <li>Streamlining and building processes across Growth, Product Marketing, Product, Internal Ops, Talent, Finance, and Legal simultaneously</li>
-          </ul>
-        </article>
+  <!-- 04: contact -->
+  <section class="sheet-wrap" id="contact">
+    <article class="sheet cover">
+      <div class="photos photos-two">
+        <figure class="photo"><span class="photo-tag">Photo 05</span></figure>
+        <figure class="photo"><span class="photo-tag">Photo 06</span></figure>
       </div>
 
-      <div class="timeline-group">
-        <h3>Previously</h3>
-        <article class="job">
-          <div class="job-head">
-            <h4>Senior Investor Relations Associate</h4>
-            <span class="job-co">Pantera Capital</span>
-            <time>2024 — 2026</time>
-          </div>
-          <ul>
-            <li>Right hand to the Head of Investor Relations, scaled the team 2x and helped raise $400M+ along the way</li>
-            <li>Learned a lot about VC, fundraising, and operating</li>
-          </ul>
-        </article>
-        <article class="job">
-          <div class="job-head">
-            <h4>LP Communications Analyst</h4>
-            <span class="job-co">Blackstone</span>
-            <time>2023 — 2024</time>
-          </div>
-          <ul>
-            <li>Worked across Legal &amp; Compliance, Institutional Client Solutions, and Private Equity deal teams covering Real Estate and Asset-Based Finance</li>
-            <li>Also learned big finance was not for me</li>
-          </ul>
-        </article>
+      <div class="info">
+        <dl class="info-col">
+          <dt>Email:</dt>
+          <dt>LinkedIn:</dt>
+          <dt>X:</dt>
+        </dl>
+        <dl class="info-col">
+          <dd><a href="mailto:kimberly0703@gmail.com">kimberly0703@gmail.com</a></dd>
+          <dd><a href="https://www.linkedin.com/in/kimberlyhchen/" target="_blank" rel="noopener">/in/kimberlyhchen</a></dd>
+          <dd><a href="https://x.com/kmbrlychn" target="_blank" rel="noopener">@kmbrlychn</a></dd>
+        </dl>
       </div>
 
-      <div class="timeline-group">
-        <h3>Internships</h3>
-        <article class="job">
-          <div class="job-head">
-            <h4>Legal</h4>
-            <span class="job-co">Kobre &amp; Kim LLP</span>
-          </div>
-          <ul>
-            <li>Learned that corporate law wasn't for me but finance might be (spoiler, it wasn't)</li>
-          </ul>
-        </article>
-        <article class="job">
-          <div class="job-head">
-            <h4>Global Strategic Research</h4>
-            <span class="job-co">Dentons</span>
-          </div>
-          <ul>
-            <li>Delivered research reports to Partner+ level stakeholders, including the Chairman &amp; CEO, for a $3B law firm</li>
-          </ul>
-        </article>
-        <article class="job">
-          <div class="job-head">
-            <h4>Legal &amp; Communications</h4>
-            <span class="job-co">Hunniwell Lake Ventures</span>
-          </div>
-          <ul>
-            <li>Wore a bunch of hats at a medtech VC firm with &lt;10 people</li>
-          </ul>
-        </article>
+      <h2 class="display">Say hello</h2>
+
+      <div class="sheet-foot">
+        <span>© 2026 Kimberly Chen</span>
+        <span>New York, NY</span>
       </div>
 
-      <div class="timeline-group">
-        <h3>Volunteering</h3>
-        <article class="job">
-          <div class="job-head">
-            <h4>Sponsorship Director</h4>
-            <span class="job-co">Out4Undergrad</span>
-            <time>2025 — 2026</time>
-          </div>
-          <ul>
-            <li>Previously: Mentor (Fall 2025), Conference Volunteer (2025), Conference Sponsor (2024), Campus Ambassador (2022–2023), Conference Student (O4U Business 2022)</li>
-          </ul>
-        </article>
-        <article class="job">
-          <div class="job-head">
-            <h4>Mentor</h4>
-            <span class="job-co">Sage Mentorship Project</span>
-            <time>2019 — 2021</time>
-          </div>
-        </article>
-      </div>
-
-    </div>
-  </section>
-
-  <section class="contact reveal-section" id="contact">
-    <div class="panel-label"><span>04 — Contact</span></div>
-
-    <div class="contact-circle">
-      <div class="aurora dormant circle-aurora" aria-hidden="true">
-        <span class="aurora-blob b1"></span>
-        <span class="aurora-blob b2"></span>
-        <span class="aurora-blob b3"></span>
-        <span class="aurora-blob b4"></span>
-      </div>
-      <div class="contact-circle-content">
-        <h2 class="cycle-word" id="cycleWord">Connect</h2>
-        <span class="mono-tag">kimberly0703@gmail.com</span>
-      </div>
-    </div>
-
-    <div class="contact-links">
-      <a href="mailto:kimberly0703@gmail.com">Email <span>↗</span></a>
-      <a href="https://www.linkedin.com/in/kimberlyhchen/" target="_blank" rel="noopener">LinkedIn <span>↗</span></a>
-      <a href="https://x.com/kmbrlychn" target="_blank" rel="noopener">X <span>↗</span></a>
-    </div>
+      <span class="spine" aria-hidden="true">Contact · Kimberly Chen</span>
+      <span class="corner" aria-hidden="true"></span>
+    </article>
+    <span class="counter">4 / 4</span>
   </section>
 
 </main>
-
-<footer class="footer">
-  <span class="mono-box">KC</span>
-  <p>© 2026 Kimberly Chen</p>
-</footer>
 
 <script src="js/main.js"></script>
 </body>
