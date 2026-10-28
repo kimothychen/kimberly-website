@@ -104,7 +104,7 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   right:clamp(.45rem,1cqi,.85rem);
   bottom:clamp(.3rem,.7cqi,.55rem);
   font-family:'Rock Salt', cursive;
-  font-size:clamp(.42rem,.64cqi,.58rem);
+  font-size:clamp(.36rem,.54cqi,.5rem);
   text-transform:uppercase;
   letter-spacing:.04em;
   line-height:1;
