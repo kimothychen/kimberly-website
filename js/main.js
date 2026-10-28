@@ -53,7 +53,7 @@
     var landing = document.getElementById(location.hash.slice(1));
     if('scrollRestoration' in history) history.scrollRestoration = 'manual';
     var settle = function(){
-      if(landing) landing.scrollIntoView();
+      if(landing) landing.scrollIntoView({ behavior: 'instant' });
       history.replaceState(null, '', location.pathname + location.search);
     };
     // wait for images and fonts so the section sits where it will finally be
