@@ -393,12 +393,12 @@ a.role-co:hover{text-decoration-color:var(--accent);}
   position:absolute;
   right:0;
   bottom:0;
-  width:clamp(130px,22cqi,320px);
+  width:clamp(110px,16cqi,230px);
   height:auto;
 }
 .turntable-record{
   transform-box:view-box;
-  transform-origin:80px 80px;
+  transform-origin:50px 50px;
   animation:spin 1.8s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg);}}
@@ -431,7 +431,7 @@ a.role-co:hover{text-decoration-color:var(--accent);}
   .library-meta{grid-template-columns:1fr;gap:1.2rem;}
   .shelf{grid-template-columns:repeat(3,1fr);}
   .shelf-albums{grid-template-columns:repeat(2,1fr);}
-  .turntable{width:118px;}
+  .turntable{width:92px;}
   .album .book-link{width:68%;}
   .now-list{grid-template-columns:1fr;gap:1.2rem;}
   .book-link{width:52%;}
