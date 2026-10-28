@@ -1,7 +1,25 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/index.html", "destination": "/", "permanent": true },
-    { "source": "/index", "destination": "/", "permanent": true }
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/rotation",
+      "destination": "/music",
+      "permanent": true
+    },
+    {
+      "source": "/rotation.html",
+      "destination": "/music",
+      "permanent": true
+    }
   ]
 }
