@@ -51,7 +51,12 @@
   // Arriving from another page via /#work: jump there, then tidy the address.
   if(location.hash){
     var landing = document.getElementById(location.hash.slice(1));
-    history.replaceState(null, '', location.pathname + location.search);
-    if(landing) landing.scrollIntoView();
+    if('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    var settle = function(){
+      if(landing) landing.scrollIntoView();
+      history.replaceState(null, '', location.pathname + location.search);
+    };
+    // wait for images and fonts so the section sits where it will finally be
+    document.readyState === 'complete' ? settle() : window.addEventListener('load', settle);
   }
 })();
