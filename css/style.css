@@ -391,9 +391,10 @@ a.role-co:hover{text-decoration-color:var(--accent);}
 .rotation-hero{position:relative;}
 .turntable{
   position:absolute;
-  right:0;
+  /* line its right edge up with the right edge of the last album column's cover */
+  right:calc((100cqi - 3 * var(--gap)) / 4 * .19);
   bottom:0;
-  width:clamp(110px,16cqi,230px);
+  width:clamp(124px,18cqi,268px);
   height:auto;
 }
 .turntable-record{
@@ -431,7 +432,7 @@ a.role-co:hover{text-decoration-color:var(--accent);}
   .library-meta{grid-template-columns:1fr;gap:1.2rem;}
   .shelf{grid-template-columns:repeat(3,1fr);}
   .shelf-albums{grid-template-columns:repeat(2,1fr);}
-  .turntable{width:92px;}
+  .turntable{width:106px;right:calc((100cqi - var(--gap)) / 2 * .16);}
   .album .book-link{width:68%;}
   .now-list{grid-template-columns:1fr;gap:1.2rem;}
   .book-link{width:52%;}
