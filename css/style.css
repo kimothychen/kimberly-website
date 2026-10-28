@@ -46,6 +46,8 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   text-transform:uppercase;
   white-space:nowrap;
 }
+.topbar-name{display:flex;align-items:center;gap:.45em;}
+.topbar-mark{height:.82em;width:auto;fill:currentColor;flex:none;}
 .topbar-nav{display:flex;gap:clamp(.9rem,1.8vw,1.5rem);}
 .topbar-nav a{
   padding-bottom:.18em;
@@ -208,7 +210,8 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   letter-spacing:-.04em;
 }
 .role-title,.role-date{padding-bottom:.25em;}
-.roles .group{
+.roles .group,
+.split .label{
   font-size:clamp(.85rem,1.5cqi,1.3rem);
   letter-spacing:-.02em;
 }
