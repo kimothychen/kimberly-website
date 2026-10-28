@@ -5,6 +5,7 @@
   --rule:rgba(26,26,26,.18);
   --photo:#302824;
   --chrome:#dcdad5;
+  --accent:#6b020e;
 
   /* Helvetica Neue on Apple devices matches the reference exactly; Inter Tight covers everyone else */
   --font:'Helvetica Neue', Helvetica, 'Inter Tight', Arial, sans-serif;
@@ -47,7 +48,7 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   white-space:nowrap;
 }
 .topbar-name{display:flex;align-items:center;gap:.45em;}
-.topbar-mark{height:.82em;width:auto;fill:currentColor;flex:none;}
+.topbar-mark{height:1.25em;width:auto;fill:var(--accent);flex:none;}
 .topbar-nav{display:flex;gap:clamp(.9rem,1.8vw,1.5rem);}
 .topbar-nav a{
   padding-bottom:.18em;
