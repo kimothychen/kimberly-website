@@ -220,8 +220,8 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
 .role-points{
   grid-column:2 / -1;
   margin:.2rem 0 .7rem;
-  padding-left:1.1em;
-  list-style:square;
+  padding-left:0;
+  list-style:none;
   max-width:64ch;
   font-weight:600;
   font-size:clamp(.62rem,.95cqi,.8rem);
@@ -229,8 +229,19 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   text-transform:uppercase;
   color:var(--ink-soft);
 }
-.role-points li{margin-bottom:.35em;}
-.role-points li::marker{color:var(--ink);}
+.role-points li{
+  position:relative;
+  padding-left:1.1em;
+  margin-bottom:.35em;
+}
+.role-points li::before{
+  content:"×";
+  position:absolute;
+  left:0;
+  top:-.05em;
+  color:var(--ink);
+  font-weight:700;
+}
 a.role-co{
   justify-self:start;
   text-decoration:underline;
