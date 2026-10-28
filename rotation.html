@@ -30,13 +30,41 @@
 
 <main class="page">
 
-  <section class="hero library-hero">
+  <section class="hero library-hero rotation-hero">
     <h1 class="display display-library">Rotation</h1>
+    <svg class="turntable" viewBox="0 0 200 160" role="img" aria-label="A record spinning on a turntable">
+      <defs>
+        <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+          <stop offset=".45" stop-color="#fff" stop-opacity=".09"/>
+          <stop offset=".55" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <rect x="2" y="2" width="196" height="156" rx="6" fill="#1a1a1a"/>
+      <rect x="2" y="2" width="196" height="156" rx="6" fill="none" stroke="#2e2e2e"/>
+      <circle cx="80" cy="80" r="66" fill="#121212"/>
+      <g class="turntable-record">
+        <circle cx="80" cy="80" r="63" fill="#0c0c0c"/>
+        <circle cx="80" cy="80" r="26" fill="none" stroke="#262626" stroke-width=".6"/><circle cx="80" cy="80" r="30" fill="none" stroke="#262626" stroke-width=".6"/><circle cx="80" cy="80" r="34" fill="none" stroke="#262626" stroke-width=".6"/><circle cx="80" cy="80" r="38" fill="none" stroke="#262626" stroke-width=".6"/><circle cx="80" cy="80" r="42" fill="none" stroke="#262626" stroke-width=".6"/><circle cx="80" cy="80" r="46" fill="none" stroke="#262626" stroke-width=".6"/><circle cx="80" cy="80" r="50" fill="none" stroke="#262626" stroke-width=".6"/><circle cx="80" cy="80" r="54" fill="none" stroke="#262626" stroke-width=".6"/><circle cx="80" cy="80" r="58" fill="none" stroke="#262626" stroke-width=".6"/>
+        <circle cx="80" cy="80" r="21" fill="#6b020e"/>
+        <g fill="#e7e5e1" transform="translate(80 80) scale(.2) translate(-50.5 -50)">
+          <rect x="15" y="15" width="31" height="70"/><path d="M51,50 L51,15 L86,15 A35,35 0 0 0 51,50 Z"/><path d="M51,50 A35,35 0 0 0 86,85 L51,85 Z"/>
+        </g>
+      </g>
+      <circle cx="80" cy="80" r="63" fill="url(#sheen)"/>
+      <circle cx="80" cy="80" r="2.2" fill="#b9b6b0"/>
+      <circle cx="168" cy="34" r="11" fill="#2a2a2a"/>
+      <circle cx="168" cy="34" r="5" fill="#b9b6b0"/>
+      <path d="M168,34 L160,96 L126,118" fill="none" stroke="#d6d3cd" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="116" y="113" width="14" height="8" rx="1.5" fill="#d6d3cd" transform="rotate(-33 123 117)"/>
+      <circle cx="184" cy="138" r="5" fill="#2a2a2a"/>
+      <circle cx="184" cy="138" r="1.6" fill="#6b020e"/>
+    </svg>
 
     <div class="library-meta">
       <dl class="info">
-        <dt>Albums:</dt><dd>8</dd>
-        <dt>Artists:</dt><dd>8</dd>
+        <dt>Albums:</dt><dd>12</dd>
+        <dt>Artists:</dt><dd>10</dd>
         <dt>Listen on:</dt><dd><a href="https://open.spotify.com/user/kimberly0703" target="_blank" rel="noopener">Spotify</a></dd>
       </dl>
     </div>
@@ -57,51 +85,79 @@
       </li>
       <li class="book album">
         <span class="book-num">02.</span>
+        <a class="book-link" href="https://open.spotify.com/album/6PBZN8cbwkqm1ERj2BGXJ1" target="_blank" rel="noopener">
+          <img src="https://i.scdn.co/image/ab67616d0000b273d28d2ebdedb220e479743797" alt="good kid, m.A.A.d city by Kendrick Lamar" loading="lazy" decoding="async">
+          <span class="book-cap">good kid, m.A.A.d city — Kendrick Lamar</span>
+        </a>
+      </li>
+      <li class="book album">
+        <span class="book-num">03.</span>
+        <a class="book-link" href="https://open.spotify.com/album/4eLPsYPBmXABThSJ821sqY" target="_blank" rel="noopener">
+          <img src="https://i.scdn.co/image/ab67616d0000b2738b52c6b9bc4e43d873869699" alt="DAMN. by Kendrick Lamar" loading="lazy" decoding="async">
+          <span class="book-cap">DAMN. — Kendrick Lamar</span>
+        </a>
+      </li>
+      <li class="book album">
+        <span class="book-num">04.</span>
         <a class="book-link" href="https://open.spotify.com/album/1atjqOZTCdrjxjMyCPZc2g" target="_blank" rel="noopener">
           <img src="https://i.scdn.co/image/ab67616d0000b273f30764d5fa1e439ad6a7742f" alt="Mr. Morale &amp; The Big Steppers by Kendrick Lamar" loading="lazy" decoding="async">
           <span class="book-cap">Mr. Morale &amp; The Big Steppers — Kendrick Lamar</span>
         </a>
       </li>
       <li class="book album">
-        <span class="book-num">03.</span>
+        <span class="book-num">05.</span>
         <a class="book-link" href="https://open.spotify.com/album/1XEycvgUklYgcYEUf7vbij" target="_blank" rel="noopener">
           <img src="https://i.scdn.co/image/ab67616d0000b2732e8e9d480a55d914e1c5ff3b" alt="I Love Life, Thank You by Mac Miller" loading="lazy" decoding="async">
           <span class="book-cap">I Love Life, Thank You — Mac Miller</span>
         </a>
       </li>
       <li class="book album">
-        <span class="book-num">04.</span>
+        <span class="book-num">06.</span>
         <a class="book-link" href="https://open.spotify.com/album/2XhNukk6jDysbSRL7VsqYb" target="_blank" rel="noopener">
           <img src="https://i.scdn.co/image/ab67616d0000b273a7493f1985f820a9add223d2" alt="Sincerely, by Kali Uchis" loading="lazy" decoding="async">
           <span class="book-cap">Sincerely, — Kali Uchis</span>
         </a>
       </li>
       <li class="book album">
-        <span class="book-num">05.</span>
+        <span class="book-num">07.</span>
         <a class="book-link" href="https://open.spotify.com/album/0qr1Fvi1haEDWVbFtekZLb" target="_blank" rel="noopener">
           <img src="https://i.scdn.co/image/ab67616d0000b273285eff7a4302cd85292d4b6f" alt="Cozy Tapes Vol. 2: Too Cozy by A$AP Mob" loading="lazy" decoding="async">
           <span class="book-cap">Cozy Tapes Vol. 2: Too Cozy — A$AP Mob</span>
         </a>
       </li>
       <li class="book album">
-        <span class="book-num">06.</span>
+        <span class="book-num">08.</span>
         <a class="book-link" href="https://open.spotify.com/album/5S4SuPHbaozi5PDedAONTG" target="_blank" rel="noopener">
           <img src="https://i.scdn.co/image/ab67616d0000b273cfb814f9b46326d2ace27218" alt="O.N.I.F.C. (Deluxe) by Wiz Khalifa" loading="lazy" decoding="async">
           <span class="book-cap">O.N.I.F.C. (Deluxe) — Wiz Khalifa</span>
         </a>
       </li>
       <li class="book album">
-        <span class="book-num">07.</span>
+        <span class="book-num">09.</span>
         <a class="book-link" href="https://open.spotify.com/album/1ozpmkWcCHwsQ4QTnxOOdT" target="_blank" rel="noopener">
           <img src="https://i.scdn.co/image/ab67616d0000b273d6adfbd3f091d6f2b9af6507" alt="What A Time To Be Alive by Drake &amp; Future" loading="lazy" decoding="async">
           <span class="book-cap">What A Time To Be Alive — Drake &amp; Future</span>
         </a>
       </li>
       <li class="book album">
-        <span class="book-num">08.</span>
+        <span class="book-num">10.</span>
         <a class="book-link" href="https://open.spotify.com/album/6GjwtEZcfenmOf6l18N7T7" target="_blank" rel="noopener">
           <img src="https://i.scdn.co/image/ab67616d0000b2736c7112082b63beefffe40151" alt="Kid A by Radiohead" loading="lazy" decoding="async">
           <span class="book-cap">Kid A — Radiohead</span>
+        </a>
+      </li>
+      <li class="book album">
+        <span class="book-num">11.</span>
+        <a class="book-link" href="https://open.spotify.com/album/2WtfCHRb8cy4a2x8vOMVkM" target="_blank" rel="noopener">
+          <img src="https://i.scdn.co/image/ab67616d0000b2731324126728be98a5b4775b4e" alt="Getaway (EP) by Orion Sun" loading="lazy" decoding="async">
+          <span class="book-cap">Getaway (EP) — Orion Sun</span>
+        </a>
+      </li>
+      <li class="book album">
+        <span class="book-num">12.</span>
+        <a class="book-link" href="https://open.spotify.com/album/7putIpK39AKgjSA1WGfeSk" target="_blank" rel="noopener">
+          <img src="https://i.scdn.co/image/ab67616d0000b273ffdd869f4ab3d2beaab8c287" alt="Moongate (EP) by Alina Baraz" loading="lazy" decoding="async">
+          <span class="book-cap">Moongate (EP) — Alina Baraz</span>
         </a>
       </li>
     </ol>
