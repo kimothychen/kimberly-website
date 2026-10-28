@@ -6,6 +6,7 @@
   --photo:#302824;
   --chrome:#dcdad5;
   --accent:#6b020e;
+  --accent-soft:rgba(107,2,14,.85);
 
   /* Helvetica Neue on Apple devices matches the reference exactly; Inter Tight covers everyone else */
   --font:'Helvetica Neue', Helvetica, 'Inter Tight', Arial, sans-serif;
@@ -177,10 +178,10 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   text-decoration:underline;
   text-decoration-thickness:1.5px;
   text-underline-offset:.15em;
-  text-decoration-color:rgba(26,26,26,.3);
+  text-decoration-color:var(--accent-soft);
   transition:text-decoration-color .2s ease;
 }
-.body-caps a:hover{text-decoration-color:var(--ink);}
+.body-caps a:hover{text-decoration-color:var(--accent);}
 .body-caps{
   font-weight:700;
   text-transform:uppercase;
@@ -252,11 +253,11 @@ a.role-co{
   text-decoration:underline;
   text-decoration-thickness:2px;
   text-underline-offset:.1em;
-  text-decoration-color:var(--rule);
+  text-decoration-color:var(--accent-soft);
   transition:text-decoration-color .2s ease;
 }
 a.role-co span{font-size:.45em;vertical-align:.9em;}
-a.role-co:hover{text-decoration-color:var(--ink);}
+a.role-co:hover{text-decoration-color:var(--accent);}
 
 .contact .display{margin-top:clamp(2.5rem,8cqi,6rem);}
 
@@ -270,12 +271,13 @@ a.role-co:hover{text-decoration-color:var(--ink);}
   margin-top:clamp(.6rem,1.4cqi,1rem);
 }
 .library-meta .info{margin-top:0;}
-.info dd a{text-decoration:underline;text-underline-offset:.2em;text-decoration-color:var(--rule);}
+.info dd a{text-decoration:underline;text-underline-offset:.2em;text-decoration-color:var(--accent-soft);}
+.info dd a:hover{text-decoration-color:var(--accent);}
 .sort{display:flex;align-items:baseline;gap:1.2em;}
 .sort button{
   padding:0 0 .15em;
   border:0;
-  background:linear-gradient(var(--ink),var(--ink)) left bottom / 0 1.5px no-repeat;
+  background:linear-gradient(var(--accent),var(--accent)) left bottom / 0 2px no-repeat;
   color:var(--ink);
   font:inherit;
   font-size:clamp(.62rem,1cqi,.8rem);
@@ -284,7 +286,7 @@ a.role-co:hover{text-decoration-color:var(--ink);}
   cursor:pointer;
   transition:background-size .25s ease;
 }
-.sort button:hover,.sort button.is-active{background-size:100% 1.5px;}
+.sort button:hover,.sort button.is-active{background-size:100% 2px;}
 
 .shelf-wrap,.now-reading{margin-top:clamp(2rem,5cqi,3.5rem);}
 .shelf-wrap .section-head,.now-reading .section-head{padding-bottom:0;}
@@ -317,7 +319,7 @@ a.role-co:hover{text-decoration-color:var(--ink);}
 }
 .now-author{color:var(--ink-soft);}
 .shelf-status{padding-top:1rem;}
-.shelf-status a{text-decoration:underline;text-underline-offset:.2em;}
+.shelf-status a{text-decoration:underline;text-underline-offset:.2em;text-decoration-color:var(--accent);}
 .shelf{
   list-style:none;
   margin:0;
