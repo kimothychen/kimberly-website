@@ -388,15 +388,6 @@ a.role-co:hover{text-decoration-color:var(--accent);}
 .book-link:focus-visible .book-cap{opacity:1;}
 .library-foot{margin-top:clamp(3rem,8cqi,6rem);}
 
-.rotation-hero{position:relative;}
-.turntable{
-  position:absolute;
-  /* line its right edge up with the right edge of the last album column's cover */
-  right:calc((100cqi - 3 * var(--gap)) / 4 * .19);
-  bottom:0;
-  width:clamp(124px,18cqi,268px);
-  height:auto;
-}
 .shelf-albums{grid-template-columns:repeat(4,1fr);}
 .album{aspect-ratio:1/1;}
 .album .book-link{width:62%;}
@@ -426,7 +417,6 @@ a.role-co:hover{text-decoration-color:var(--accent);}
   .library-meta{grid-template-columns:1fr;gap:1.2rem;}
   .shelf{grid-template-columns:repeat(3,1fr);}
   .shelf-albums{grid-template-columns:repeat(2,1fr);}
-  .turntable{width:106px;right:calc((100cqi - var(--gap)) / 2 * .16);}
   .album .book-link{width:68%;}
   .now-list{grid-template-columns:1fr;gap:1.2rem;}
   .book-link{width:52%;}
