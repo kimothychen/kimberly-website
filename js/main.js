@@ -34,4 +34,24 @@
   window.addEventListener('scroll', markActive, { passive: true });
   window.addEventListener('resize', markActive);
   markActive();
+
+  // Scroll to sections without leaving "#about" etc. in the address bar.
+  var idFromHref = function(href){
+    var m = /^\/?#(.+)$/.exec(href || '');
+    return m ? m[1] : null;
+  };
+  document.addEventListener('click', function(e){
+    var link = e.target.closest('a[href]');
+    if(!link || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    var target = document.getElementById(idFromHref(link.getAttribute('href')));
+    if(!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth' });
+  });
+  // Arriving from another page via /#work: jump there, then tidy the address.
+  if(location.hash){
+    var landing = document.getElementById(location.hash.slice(1));
+    history.replaceState(null, '', location.pathname + location.search);
+    if(landing) landing.scrollIntoView();
+  }
 })();
