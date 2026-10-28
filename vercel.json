@@ -12,14 +12,9 @@
       "permanent": true
     },
     {
-      "source": "/rotation",
-      "destination": "/music",
-      "permanent": true
-    },
-    {
-      "source": "/rotation.html",
-      "destination": "/music",
-      "permanent": true
+      "source": "/music",
+      "destination": "/rotation",
+      "permanent": false
     }
   ]
 }
