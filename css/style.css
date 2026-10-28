@@ -397,12 +397,6 @@ a.role-co:hover{text-decoration-color:var(--accent);}
   width:clamp(124px,18cqi,268px);
   height:auto;
 }
-.turntable-record{
-  transform-box:view-box;
-  transform-origin:50px 50px;
-  animation:spin 1.8s linear infinite;
-}
-@keyframes spin{to{transform:rotate(360deg);}}
 .shelf-albums{grid-template-columns:repeat(4,1fr);}
 .album{aspect-ratio:1/1;}
 .album .book-link{width:62%;}
@@ -446,7 +440,6 @@ a.role-co:hover{text-decoration-color:var(--accent);}
 }
 
 @media (prefers-reduced-motion: reduce){
-  .turntable-record{animation:none;}
   html{scroll-behavior:auto;}
   *{transition-duration:.001ms !important;}
 }
