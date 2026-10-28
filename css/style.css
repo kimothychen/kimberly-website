@@ -56,11 +56,11 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   font-weight:400;
   letter-spacing:0;
   text-transform:uppercase;
-  background:linear-gradient(var(--ink),var(--ink)) left bottom / 0 1.5px no-repeat;
+  background:linear-gradient(var(--accent),var(--accent)) left bottom / 0 2px no-repeat;
   transition:background-size .25s ease;
 }
 .topbar-nav a:hover,
-.topbar-nav a.is-active{background-size:100% 1.5px;}
+.topbar-nav a.is-active{background-size:100% 2px;}
 
 /* ---------- PAGE ---------- */
 .page{
