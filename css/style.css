@@ -103,13 +103,14 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
   position:absolute;
   right:clamp(.45rem,1cqi,.85rem);
   bottom:clamp(.3rem,.7cqi,.55rem);
-  font-family:'Rock Salt', cursive;
-  font-size:clamp(.36rem,.54cqi,.5rem);
+  font-family:var(--font);
+  font-weight:700;
+  font-size:clamp(.5rem,.7cqi,.62rem);
   text-transform:uppercase;
-  letter-spacing:.04em;
+  letter-spacing:.02em;
   line-height:1;
-  color:#fff;
-  text-shadow:0 1px 2px rgba(0,0,0,.65), 0 0 8px rgba(0,0,0,.45);
+  color:var(--ink);
+  text-shadow:0 0 6px rgba(231,229,225,.7);
   pointer-events:none;
 }
 .photo img{
@@ -222,7 +223,7 @@ h1,h2,h3,p,dl,dd,figure{margin:0;}
 }
 .role .role-co{
   font-size:clamp(1.15rem,2.7cqi,2.4rem);
-  line-height:.92;
+  line-height:1.08;
   letter-spacing:-.04em;
 }
 .role-title,.role-date{padding-bottom:.25em;}
@@ -266,11 +267,12 @@ a.role-co{
   justify-self:start;
   text-decoration:underline;
   text-decoration-thickness:2px;
-  text-underline-offset:.1em;
+  text-underline-offset:.08em;
+  text-decoration-skip-ink:none;
   text-decoration-color:var(--accent-soft);
   transition:text-decoration-color .2s ease;
 }
-a.role-co span{font-size:.45em;vertical-align:.9em;}
+a.role-co span{font-size:.45em;vertical-align:.9em;font-family:var(--font);font-variant-emoji:text;}
 a.role-co:hover{text-decoration-color:var(--accent);}
 
 .contact .display{margin-top:clamp(2.5rem,8cqi,6rem);}
